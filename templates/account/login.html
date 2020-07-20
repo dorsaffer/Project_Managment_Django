@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block header %}
+    {% include "header.html" %}
+{% endblock %}
+{% block content %}
+            <div class="container">
+              <p >Sign into your pages account</p>
+                <!-- START Login Form -->
+                <form id="form-login" action="{% url 'login' %}" method="post" class="p-t-15">
+                    {% csrf_token %}
+                    <!-- START Form Control-->
+                    <div class="form-group">
+                        <label>Login</label>
+                        <div class="controls">
+                            {{ form.username }}
+                        </div>
+                    </div>
+                    <!-- START Form Control-->
+                    <div class="form-group">
+                        <label>password</label>
+                        <div class="controls">
+                            {{ form.password }}
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Se connecter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}

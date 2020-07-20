@@ -1,0 +1,15 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" >
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" >
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+{# Normaliser la stylisation sur tout les navigateurs #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css.map">
+</head>
+<body>
+    {% block header %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}{% endblock %}
+</body>

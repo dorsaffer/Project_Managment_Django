@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Liste des Posts</h1>
+<ul>
+                    {% for p in posts %}
+                        {% if p %}
+                            <li><a href="{% url 'show' p.id %}">{{ p.title }}</a></li>
+                        {% endif %}
+                    {% empty %}
+                        <p>Aucun projet n'est disponible!</p>
+                    {% endfor %}
+                </ul>
+</body>
+</html>

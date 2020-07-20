@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>Vous avez cherché: <strong>{{ query }}</strong></p>
+{% if project %}
+<p>Trouvé: {{ project|length }}
+livre{{ project|pluralize }}.</p>
+<ul>
+{% for p in project %}
+<li>{{ p.nom_du_projet }}</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>Aucun projet  trouvé.</p>
+{% endif %}
+
+</body>
+</html>

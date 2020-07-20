@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block header %}
+    {% include "header.html" %}
+{% endblock %}
+{% block content %}
+        <div>
+            <form id="" method="post" >
+                {% csrf_token %}
+                <div class="row">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Username</label>
+                            {{ form.username }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Password</label>
+                            {{ form.password1 }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="">
+                        <div class="form-group">
+                            <label>Repeat password</label>
+                            {{ form.password2 }}
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <p><small>I agree to the <a href="#" class="text-info">Pages Terms</a> and <a href="#"
+                                                                                                      class="text-info">Privacy</a>.</small>
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="#" class="text-info">Help? Contact Support</a>
+                    </div>
+                </div>
+                {% if form.errors %}
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <button class="btn btn-primary" type="submit">Create a new account</button>
+            </form>
+        </div>
+{% endblock %}
+{% block footer %}
+    {% include "footer.html" %}
+{% endblock %}

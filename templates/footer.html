@@ -1,0 +1,11 @@
+<div class="fixed-bottom">
+<footer id="footer" class="footer row-fluid">
+    <div class="span8 offset2">
+        {% block footer_content %}
+            <div>©Copyright {% now 'Y' %} - Esprit - {% block footer_app_title %}Innovation Hub{% endblock footer_app_title %}
+            </div>
+        <div>by Esprit</div>
+        {% endblock footer_content%}
+    </div>
+</footer>
+</div>
